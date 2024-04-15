@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="lstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <script src="auth.js"></script>
+
+    <style>
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .header{
+            min-height: 70vh;
+        }
+        .header,
+        .cta,
+        .sub-header {
+            background-image: url('tempbg.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .sub-header,
+        .light-mode .sub-header {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                            url('tempbg.png');
+        }
+
+        .dark-mode .sub-header {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                            url('tempbg.png');
+        }
+
+
+        .phase {
+    position: relative;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.course-col {
+    max-width: 800px; /* Adjust the max-width as needed */
+    padding: 20px; /* Add padding as needed */
+    text-align: center; /* Align the content center */
+    padding-left: 50px;
+}
+
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.card-header {
+    background-color: #ad8a38; /* Marker color */
+    width: 12px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -6px; /* Adjust to position the marker */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.arrow-left {
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ffffff;
+    left: 0;
+}
+
+.arrow-right {
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+    right: 0;
+}
+
+@media (max-width: 700px) {
+    .timeline {
+        margin: 50px auto;
+        width: 90%;
+    }
+    
+    .card {
+        width: 100%;
+    }
+}
+
+.big-card {
+    width: 800px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the card horizontally */
+    border: 1px solid #ccc; /* Add border for visual clarity */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Ensure contents don't overflow */
+}
+
+.big-card img {
+    width: 100%; /* Make the image fill the entire width of the card */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.card-content {
+    padding: 20px; /* Add padding around the content */
+}
+
+.card-content h2 {
+    font-size: 24px; /* Adjust heading font size */
+    margin-bottom: 10px; /* Add space below the heading */
+}
+
+.card-content p {
+    font-size: 18px; /* Adjust paragraph font size */
+}
+    </style>
+
+</head>
+<body>
+    <section class="header">
+        <nav style="padding-top: 30px;">
+            <img style="width: 250px; margin-left: 85px;" src="nvt1.png">
+            <a href="index.html"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home2.html" style="font-size: 18px;">Home</a></li>
+                    <li><a href="career.html" style="font-size: 18px;">Career</a></li>
+                     <li><a href="mquiz.html" style="font-size: 18px;">Mental Health</a></li>
+                     <li><a href="explore.html" style="font-size: 18px;">Explore</a></li>
+                     <li><a href="ideahub.html" style="font-size: 18px;">IdeaHub</a></li>
+                     <li><a href="community.html" style="font-size: 18px;">Community</a></li>
+                     <li><a href="article.html" style="font-size: 18px;">Articles</a></li>
+                     <li><a href="profile.html" style="font-size: 18px;background-color: #ad8a38; font-weight: bold; padding: 10px; border-radius: 5px;">Profile</a></li>
+                     
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>    
+        <div class="text-box">
+            <h1 style="font-size:60px; margin-top:100px;">Wanna be a UI/UX Designer? </h1>
+            <p style="font-size:20px">Here's how you do it!</p>
+        </div>
+
+        <button class="chatbot-toggler">
+            <span class="material-symbols-rounded"><i class="fa-solid fa-message"></i></span>
+            <span class="material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+          </button>
+          <div class="chatbot">
+            <header>
+              <h2>Chatbot</h2>
+              <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+            </header>
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined"><i class="fa-regular fa-paper-plane"></i></span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+              </li>
+            </ul>
+            <div class="chat-input">
+              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+              <span id="send-btn" class="material-symbols-rounded"><i class="fa-solid fa-share"></i></span>
+            </div>
+          </div>
+    </section>
+
+    <section class="course">
+        <h1 style="font-size:40px;">Highlights</h1>
+
+
+        <div class="big-card" style="margin-top: 30px;">
+            <img src="uix.jpg" alt="Image" style="max-width: 100%; height: auto;">
+            <div class="card-content">
+                <p style="font-size: 30px; margin-top:30px; color: black;">UI/UX Designer</p>
+                <p style="font-size:18px;"> A UI/UX designer crafts digital experiences that seamlessly blend aesthetics with functionality, prioritizing user satisfaction and engagement. They meticulously design interfaces that are intuitive, visually appealing, and accessible across various devices.</p><br>
+                <p style="font-size:18px;">Through user research and testing, they gain insights into user behavior and preferences, informing their design decisions. Collaborating closely with developers and stakeholders, they translate conceptual ideas into tangible, user-centered designs. Proficient in design tools like Adobe XD or Figma, they create wireframes, prototypes to iterate and refine designs. They possess a keen eye for detail, ensuring every element contributes to a cohesive and delightful user journey.  </p><br>
+                <p style="font-size:18px;">Their work extends beyond aesthetics to include usability, ensuring interfaces are intuitive and easy to navigate. They advocate for the user throughout the design process, championing their needs and preferences. A UI/UX designer balances creativity with analytical thinking, finding solutions that marry form and function seamlessly. They play a crucial role in enhancing brand identity and user engagement, driving the success of digital products and services.</p>
+            </div>
+        </div>
+
+    <br>
+    <br>
+
+    <section class="course">
+        <h1>Choose your concept</h1>
+    </section>
+
+   <section class="developer-section">
+    <div class="row">
+        <div class="developer-card">
+            <h2>Visual Design Fundamentals</h2>
+            <p>Master the basics of visual design with these curated resources:</p>
+            <a href="#" class="resource-link">Learn more</a>
+        </div>
+        
+        <div class="developer-card">
+            <h2>User Experience Principles</h2>
+            <p>Learn essential UX principles and methodologies:</p>
+            <a href="#" class="resource-link">Learn more</a>
+        </div>
+    </div>
+     
+    <div class="row">
+        <div class="developer-card">
+            <h2>Prototyping Tools</h2>
+            <p>Discover popular prototyping tools used by UX designers:</p>
+            <a href="#" class="resource-link">Learn more</a>
+        </div>
+  
+        <div class="developer-card">
+            <h2>Interaction Design Techniques</h2>
+            <p>Explore advanced techniques for interaction design:</p>
+            <a href="#" class="resource-link">Learn More</a>
+        </div>
+    </div>
+</section>
+
+    </section>
+    <h2 style="text-align: center;">Road Map to reach your goal faster</h2>
+    <br>
+    <br>
+    <img style="width:100%;"src="imgcpy.jpg">
+
+<br><br><br>
+<section class="roadmap">
+  <h2 style="text-align: center; margin-top:20px; font-size: 30px;">UI/UX Designer Career Path</h2><br><br><br>
+  <div class="timeline" style="margin-left: 50px; margin-right: 50px;">
+      <div class="phase">
+          <div class="arrow-left"></div>
+          <div class="card" style="margin-bottom:10px;">
+              <div class="card-header"></div>
+              <div class="card-body">
+                  <h2 style="padding-left: 600px;">Phase 1: Foundation</h2><br>
+                  <p style="font-size: 20px;">Build a strong foundation in design principles, including typography, color theory, and layout.</p>
+                  <p style="font-size: 20px;">Estimated Salary: $40,000 - $60,000 per year</p>
+              </div>
+          </div>
+      </div>
+      <div class="phase">
+          <div class="arrow-right"></div>
+          <div class="card" style="margin-bottom:10px;">
+              <div class="card-header"></div>
+              <div class="card-body">
+                  <h2 style="padding-left: 600px;">Phase 2: User Research</h2><br>
+                  <p style="font-size: 20px;">Learn user research methodologies and conduct usability testing to understand user needs.</p>
+                  <p style="font-size: 20px;">Estimated Salary: $60,000 - $80,000 per year</p>
+              </div>
+          </div>
+      </div>
+      <div class="phase">
+          <div class="arrow-left"></div>
+          <div class="card" style="margin-bottom:10px;">
+              <div class="card-header"></div>
+              <div class="card-body">
+                  <h2 style="padding-left: 600px;">Phase 3: Prototyping</h2><br>
+                  <p style="font-size: 20px;">Master prototyping tools like Adobe XD, Sketch, or Figma to create interactive wireframes and prototypes.</p>
+                  <p style="font-size: 20px;">Estimated Salary: $80,000 - $100,000+ per year</p>
+              </div>
+          </div>
+      </div>
+      <div class="phase">
+          <div class="arrow-right"></div>
+          <div class="card" style="margin-bottom:10px;">
+              <div class="card-header"></div>
+              <div class="card-body">
+                  <h2 style="padding-left: 600px;">Phase 4: Specialization</h2><br>
+                  <p style="font-size: 20px;">Focus on specialized areas such as interaction design, information architecture, or user interface design.</p>
+                  <p style="font-size: 20px;">Estimated Salary: $100,000 - $150,000+ per year</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+    <section class="testimonials">
+        <h1 style="font-size: 40px;">Success Stories</h1>
+        <p style="margin-bottom:30px; font-size:20px; color:#1E293B;">Wanna know what happened to people that took the same path as you?</p>
+        <div class="row">
+            <div class="testimonial-col" style="margin-right: 30px;">
+                <div>                        
+                    <h3 style="margin-bottom:20px;font-size: 25px;">Success Story 1</h3>
+                    <p style="font-size:20px;">From healthcare to ux/ui designer success story of Imani Douglas</p>
+                    <p>Read more about <a target="_blank" href="https://www.careerist.com/insights/from-healthcare-to-ux/ui-designer-success-story-of-imani-douglas">Imani Douglas' journey</a></p>
+                </div>
+            </div>
+            <div class="testimonial-col">
+                <div>
+                    <h3 style="margin-bottom:20px;font-size: 25px;">Success Story 2</h3>
+                    <p style="font-size:20px;">Sannan Malik's Way to $1 Million: A Figma UI/UX Success Story.</p>
+                    <p>Read more about <a target="_blank" href="https://medium.com/@sannanmalikofficial/my-way-to-1-million-a-figma-ui-ux-success-story-d05d1e18e711">Malik's journey</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="google_translate_element"></div>
+
+    <section class="footer">
+        <h3 style="color: #f0dbaa; font-weight: bold;">Contact Us</h3>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </section>
+
+    <script src="cscript.js"></script>
+
+    <script>
+        var navlinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navlinks.style.right = "0";
+        }
+
+        function hidemenu() {
+            navlinks.style.right = "-200px";
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentUser = getCurrentUser();
+
+      if (currentUser) {
+        if (currentUser.role === 'admin') {
+          document.getElementById('reviews').contentEditable = true;
+        } else {
+          document.getElementById('reviews').contentEditable = false;
+        }
+      }
+    });
+  </script>
+
+<script src="chello.js"></script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+function loadGoogleTranslate() {
+new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+}
+</script>
+
+</body>
+</html>

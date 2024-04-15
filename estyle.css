@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body{
+    background-color: #d5c8b0;
+}
+
+.header{
+    min-height: 70vh;
+}
+
+
+.explore {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.events, .opportunities {
+    margin-bottom: 40px;
+}
+
+.event, .opportunity {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event img, .opportunity img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event:hover img, .opportunity:hover img {
+    transform: scale(1.1);
+}
+
+.event-info, .opportunity-info {
+    padding: 20px;
+}
+
+.event-info h3, .opportunity-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-info p, .opportunity-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.header,
+.cta,
+.sub-header {
+    /* height: 200px; */
+    background-image: url('tempbg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.sub-header,
+.light-mode .sub-header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                      url('tempbg.png');
+}
+
+.dark-mode .sub-header {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                      url('tempbg.png');
+}

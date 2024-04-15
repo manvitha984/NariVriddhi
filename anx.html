@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips to overcome anxiety</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .header{
+            min-height: 70vh;
+        }
+        .header,
+        .cta,
+        .sub-header {
+            background-image: url('imgs/tempbg.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .sub-header,
+        .light-mode .sub-header {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                            url('imgs/tempbg.png');
+        }
+
+        .dark-mode .sub-header {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                            url('imgs/tempbg.png');
+        }
+        .article {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px; /* Increased width */
+            margin: 0 auto;
+            padding: 40px; /* Increased padding */
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            width: 90%; /* Increased width of the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container ul {
+            padding-left: 20px; /* Add padding to the left of the list */
+        }
+
+        .container li {
+            font-size: 18px; /* Set consistent font size */
+            line-height: 1.6;
+            margin-bottom: 15px; /* Adjusted margin bottom */
+            padding-left: 15px; /* Add padding to the left of each list item */
+        }
+
+        .container p,
+        .container ul,
+        .container li,
+        .container h1,
+        .container h3 {
+            font-size: 18px; /* Set consistent font size */
+            line-height: 1.6;
+            margin-bottom: 20px; /* Increased margin bottom */
+        }
+
+        .container h1,
+        .container h3 {
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 40px; /* Increased margin top */
+        }
+
+        .footer .icons {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav style="padding-top: 30px;">
+            <img style="width: 250px; margin-left: 85px;" src="imgs/nvt1.png">
+            <a href="index.html"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home2.html" style="font-size: 18px;">Home</a></li>
+                    <li><a href="career.html" style="font-size: 18px;">Career</a></li>
+                     <li><a href="mquiz.html" style="font-size: 18px;">Mental Health</a></li>
+                     <li><a href="explore.html" style="font-size: 18px;">Explore</a></li>
+                     <li><a href="ideahub.html" style="font-size: 18px;">IdeaHub</a></li>
+                     <li><a href="community.html" style="font-size: 18px;">Community</a></li>
+                     <li><a href="article.html" style="font-size: 18px;">Articles</a></li>
+                     <li><a href="profile.html" style="font-size: 18px;background-color: #ad8a38; font-weight: bold; padding: 10px; border-radius: 5px;">Profile</a></li>
+                     
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>    
+
+        <br><br><br><br>
+        <div class="text-box">
+            <h1 style="padding-top: 30px; font-size: 50px;">Tips for Women to overcome anxiety</h1>
+        </div>
+
+        <button class="chatbot-toggler">
+            <span class="material-symbols-rounded"><i class="fa-solid fa-message"></i></span>
+            <span class="material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+          </button>
+          <div class="chatbot">
+            <header>
+              <h2>Chatbot</h2>
+              <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+            </header>
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined"><i class="fa-regular fa-paper-plane"></i></span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+              </li>
+            </ul>
+            <div class="chat-input">
+              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+              <span id="send-btn" class="material-symbols-rounded"><i class="fa-solid fa-share"></i></span>
+            </div>
+          </div>
+    </section>
+
+    <div class="container">
+      <img src="imgs/anx.jpg" alt="Overcoming Anxiety">
+      <h1>Tips to Overcome Anxiety</h1>
+      <p>
+          Anxiety is a common mental health condition that can significantly impact daily life. However, there are various strategies and techniques individuals can employ to manage and overcome anxiety. Here are some effective approaches:
+      </p>
+      <ul>
+          <li><strong>Deep Breathing and Relaxation Techniques:</strong> Practice deep breathing exercises, progressive muscle relaxation, or mindfulness meditation to calm the mind and body during anxious moments.</li>
+          <li><strong>Challenge Negative Thoughts:</strong> Identify and challenge negative thought patterns that contribute to anxiety. Replace irrational or catastrophic thoughts with more balanced and realistic perspectives.</li>
+          <li><strong>Establish a Routine:</strong> Create a daily routine that includes regular exercise, nutritious meals, adequate sleep, and relaxation activities. Maintaining a consistent schedule can help reduce stress and anxiety levels.</li>
+          <li><strong>Stay Active:</strong> Engage in physical activities such as walking, jogging, yoga, or dancing to release tension, boost mood, and promote relaxation.</li>
+          <li><strong>Limit Caffeine and Alcohol:</strong> Reduce or avoid consumption of caffeine and alcohol, as they can exacerbate anxiety symptoms and disrupt sleep patterns.</li>
+          <li><strong>Seek Support:</strong> Reach out to trusted friends, family members, or mental health professionals for support and guidance. Sharing your feelings and experiences with others can provide validation and perspective.</li>
+          <li><strong>Practice Self-Care:</strong> Prioritize self-care activities that promote relaxation and well-being, such as taking a warm bath, reading a book, listening to music, or spending time in nature.</li>
+          <li><strong>Set Realistic Goals:</strong> Break tasks into smaller, manageable steps and set realistic goals for yourself. Celebrate progress and accomplishments, no matter how small.</li>
+          <li><strong>Avoid Avoidance:</strong> Resist the urge to avoid situations or activities that trigger anxiety. Instead, gradually expose yourself to these situations in a controlled manner to build confidence and resilience.</li>
+          <li><strong>Consider Therapy:</strong> Explore therapy options such as cognitive-behavioral therapy (CBT), exposure therapy, or acceptance and commitment therapy (ACT) with a qualified mental health professional.</li>
+      </ul>
+      <p>
+          Overcoming anxiety takes time, patience, and effort, but with persistence and the right support, it is possible to regain control and live a fulfilling life. Remember to be kind to yourself and celebrate your progress along the journey to better mental health.
+      </p>
+      <p>
+          If you're struggling with anxiety, don't hesitate to seek professional help. A mental health professional can provide personalized treatment and support to help you manage anxiety and improve your quality of life.
+      </p>
+  </div>
+  
+  
+    <script src="chello.js"></script>
+    <div id="google_translate_element"></div>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script src="cscript.js"></script>
+
+
+    <section class="footer">
+        <h3 style="color:#f0dbaa; font-weight: bold;">Contact Us</h3>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </section>
+</body>
+</html>

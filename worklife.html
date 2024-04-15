@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work-life Balance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .header{
+            min-height: 70vh;
+        }
+        .header,
+        .cta,
+        .sub-header {
+            background-image: url('tempbg.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .sub-header,
+        .light-mode .sub-header {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                            url('tempbg.png');
+        }
+
+        .dark-mode .sub-header {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                            url('tempbg.png');
+        }
+        .article {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px; /* Increased width */
+            margin: 0 auto;
+            padding: 40px; /* Increased padding */
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            width: 90%; /* Increased width of the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container ul {
+            padding-left: 20px; /* Add padding to the left of the list */
+        }
+
+        .container li {
+            font-size: 18px; /* Set consistent font size */
+            line-height: 1.6;
+            margin-bottom: 15px; /* Adjusted margin bottom */
+            padding-left: 15px; /* Add padding to the left of each list item */
+        }
+
+        .container p,
+        .container ul,
+        .container li,
+        .container h1,
+        .container h3 {
+            font-size: 18px; /* Set consistent font size */
+            line-height: 1.6;
+            margin-bottom: 20px; /* Increased margin bottom */
+        }
+
+        .container h1,
+        .container h3 {
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 40px; /* Increased margin top */
+        }
+
+        .footer .icons {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav style="padding-top: 30px;">
+            <img style="width: 250px; margin-left: 85px;" src="nvt1.png">
+            <a href="index.html"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home2.html" style="font-size: 18px;">Home</a></li>
+                    <li><a href="career.html" style="font-size: 18px;">Career</a></li>
+                     <li><a href="mquiz.html" style="font-size: 18px;">Mental Health</a></li>
+                     <li><a href="explore.html" style="font-size: 18px;">Explore</a></li>
+                     <li><a href="ideahub.html" style="font-size: 18px;">IdeaHub</a></li>
+                     <li><a href="community.html" style="font-size: 18px;">Community</a></li>
+                     <li><a href="article.html" style="font-size: 18px;">Articles</a></li>
+                     <li><a href="profile.html" style="font-size: 18px;background-color: #ad8a38; font-weight: bold; padding: 10px; border-radius: 5px;">Profile</a></li>
+                     
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>    
+
+        <br><br><br><br>
+        <div class="text-box">
+            <h1 style="padding-top: 30px; font-size: 50px;">Work-Life Balance: Tips for a Healthier and Happier Life</h1>
+        </div>
+
+        <button class="chatbot-toggler">
+            <span class="material-symbols-rounded"><i class="fa-solid fa-message"></i></span>
+            <span class="material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+          </button>
+          <div class="chatbot">
+            <header>
+              <h2>Chatbot</h2>
+              <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+            </header>
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined"><i class="fa-regular fa-paper-plane"></i></span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+              </li>
+            </ul>
+            <div class="chat-input">
+              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+              <span id="send-btn" class="material-symbols-rounded"><i class="fa-solid fa-share"></i></span>
+            </div>
+          </div>
+    </section>
+
+    <div class="container">
+        <img src="image15.jpg" alt="Work-Life Balance">
+        <p>
+            Achieving a work-life balance is essential for maintaining physical and mental well-being. In today's fast-paced world, many individuals struggle to find harmony between their professional and personal lives. However, with the right strategies, it is possible to lead a fulfilling life both at work and at home.
+        </p>
+        <p>
+            Here are some additional tips for achieving a better work-life balance:
+        </p>
+        <ul>
+            <li>Set realistic goals: Break down your long-term goals into smaller, achievable tasks to avoid feeling overwhelmed.</li>
+            <li>Learn to say no: Don't be afraid to decline additional responsibilities if you feel that they will negatively impact your work-life balance.</li>
+            <li>Unplug from technology: Limit your screen time outside of work hours to reduce stress and improve sleep quality.</li>
+            <li>Invest in relationships: Spend quality time with family and friends to nurture personal connections and recharge your emotional batteries.</li>
+            <li>Practice gratitude: Take time each day to reflect on the positive aspects of your life and express gratitude for them.</li>
+            <li>Seek support: Don't hesitate to seek support from friends, family, or a professional counselor if you're feeling overwhelmed or stressed.</li>
+            <li>Establish a routine: Create a daily schedule that includes time for work, leisure, exercise, and relaxation.</li>
+            <li>Set boundaries: Clearly define your work hours and stick to them to prevent burnout and maintain productivity.</li>
+            <li>Embrace flexibility: Be open to adjusting your schedule and priorities as needed to accommodate unexpected events or changes.</li>
+        </ul>
+        <p>
+            Remember that achieving work-life balance is a continuous process that requires self-awareness, commitment, and adaptability. By implementing these tips and making conscious choices to prioritize your well-being, you can create a healthier and happier balance between your work and personal life, leading to greater fulfillment and satisfaction in all areas of your life.
+        </p>
+    </div>
+    <div id="google_translate_element"></div>
+
+    <script src="chello.js"></script>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script src="cscript.js"></script>
+
+
+    <section class="footer">
+        <h3 style="color:#f0dbaa; font-weight: bold;">Contact Us</h3>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </section>
+</body>
+</html>

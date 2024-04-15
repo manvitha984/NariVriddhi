@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .header{
+            min-height: 70vh;
+        }
+        .header,
+        .cta,
+        .sub-header {
+            background-image: url('tempbg.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .sub-header,
+        .light-mode .sub-header {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                            url('tempbg.png');
+        }
+
+        .dark-mode .sub-header {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                            url('tempbg.png');
+        }
+        .article {
+            padding: 20px;
+        }
+
+        .article h2 {
+            margin-top: 0;
+        }
+
+        .article .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .article .images a {
+            flex: 0 0 45%;
+            margin-bottom: 20px;
+            margin-right: 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            min-height: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article .description {
+            background-color: rgba(173, 138, 56, 0.8);
+            font-size: 30px;
+            font-weight: 400;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .article .images a:hover .description {
+            top: 0;
+            opacity: 1;
+        }
+
+        .article .description p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .article p {
+            margin: 0;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="header">
+        <nav style="padding-top: 30px;">
+            <img style="width: 250px; margin-left: 85px;" src="nvt1.png">
+            <a href="index.html"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home2.html" style="font-size: 18px;">Home</a></li>
+                    <li><a href="career.html" style="font-size: 18px;">Career</a></li>
+                     <li><a href="mquiz.html" style="font-size: 18px;">Mental Health</a></li>
+                     <li><a href="explore.html" style="font-size: 18px;">Explore</a></li>
+                     <li><a href="ideahub.html" style="font-size: 18px;">IdeaHub</a></li>
+                     <li><a href="community.html" style="font-size: 18px;">Community</a></li>
+                     <li><a href="article.html" style="font-size: 18px;">Articles</a></li>
+                     <li><a href="profile.html" style="font-size: 18px;background-color: #ad8a38; font-weight: bold; padding: 10px; border-radius: 5px;">Profile</a></li>
+                     
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>    
+
+        <br><br><br><br>
+        <div class="text-box">
+            <h1 style="padding-top: 20px; font-size: 50px;">Explore the technologies</h1>
+        </div>
+
+        <button class="chatbot-toggler">
+            <span class="material-symbols-rounded"><i class="fa-solid fa-message"></i></span>
+            <span class="material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+          </button>
+          <div class="chatbot">
+            <header>
+              <h2>Chatbot</h2>
+              <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+            </header>
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined"><i class="fa-regular fa-paper-plane"></i></span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+              </li>
+            </ul>
+            <div class="chat-input">
+              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+              <span id="send-btn" class="material-symbols-rounded"><i class="fa-solid fa-share"></i></span>
+            </div>
+          </div>
+    </section>
+
+    <!-- Article Section -->
+    <div class="article">
+        <div class="article">
+            <div class="images">
+                <a href="fullstack.html">
+                    <img src="image121.avif" alt="Image 1">
+                    <div class="description">FullStack Developer</div>
+                </a>
+                <a href="uiux.html">
+                    <img src="image21.jpg" alt="Image 2">
+                    <div class="description">UI/UX Designer</div>
+                </a>
+            </div>
+        </div>
+    
+        <div class="article">
+            <div class="images">
+                <a href="#">
+                    <img src="image31.jpg" alt="Image 3">
+                    <div class="description">Project Manager</div>
+                </a>
+                <a href="related_content_page.html">
+                    <img src="image41.jpg" alt="Image 4">
+                    <div class="description">Graphic Designer</div>
+                </a>
+            </div>
+        </div>
+        <div class="article">
+            <div class="images">
+                <a href="#">
+                    <img src="image51.webp" alt="Image 1">
+                    <div class="description">Industrial Designer</div>
+                </a>
+                <a href="#">
+                    <img src="image61.jpg" alt="Image 2">
+                    <div class="description">SocialMedia Designer</div>
+                </a>
+            </div>
+        </div>
+        <div class="article">
+            <div class="images">
+                <a href="#">
+                    <img src="image71.jpg" alt="Image 1">
+                    <div class="description">Devops</div>
+                </a>
+                <a href="#">
+                    <img src="image91.jpg" alt="Image 2">
+                    <div class="description">Cyber Security Analyst</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="chello.js"></script>
+<div id="google_translate_element"></div>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+</script>
+<script src="cscript.js"></script>
+
+    <section class="footer">
+        <h3 style="color:#f0dbaa; font-weight: bold;">Contact Us</h3>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </section>
+</body>
+</html>
